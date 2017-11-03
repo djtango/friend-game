@@ -11,3 +11,7 @@ pom.xml.asc
 .hg/
 **/*.swo
 **/*.swp
+/resources/public/cljs
+/resources/public/js/app*.js
+/resources/public/test/cljs
+figwheel_server.log
