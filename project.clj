@@ -14,6 +14,7 @@
 
                  ;; CLJS
                  [org.clojure/clojurescript "1.9.946"]
+                 [cljs-http "0.1.44"]
                  [reagent "0.8.0-alpha2"]]
 
   :figwheel {:ring-handler friend-game.core/app}

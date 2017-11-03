@@ -1,5 +1,5 @@
 (ns friend-game.core
-  (:require [compojure.core :as compojure :refer [GET]]
+  (:require [compojure.core :as compojure :refer [GET PUT]]
             [org.httpkit.server :as httpkit]
             [hiccup.page :as hiccup]
             [ring.middleware.resource]))
@@ -21,8 +21,15 @@
         [:div#app]
         (hiccup/include-js "/js/app.js")]))
 
+(def counter (atom 0))
+
 (compojure/defroutes routes
-  (GET "/" [] index))
+  (GET "/" [] index)
+  (PUT "/counter/inc" [] (fn [res]
+                           (swap! counter inc)
+                           {:status 200
+                            :headers {"Content-Type" "application/json"}
+                            :body (str @counter)})))
 
 (def app
   (-> routes
