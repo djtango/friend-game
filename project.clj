@@ -4,18 +4,21 @@
   :license {:name "Eclipse Public License"
             :url "http://www.eclipse.org/legal/epl-v10.html"}
   :dependencies [;; CLJ
-                 [org.clojure/clojure "1.9.0-beta4"]
+                 [org.clojure/clojure "1.9.0-alpha14"]
                  [midje "1.9.0-alpha6"]
                  [ring "1.6.3"]
+                 [ring/ring-defaults        "0.2.1"]
                  [compojure "1.6.0"]
                  [http-kit "2.2.0"]
                  [hiccup "1.0.5"]
                  [figwheel-sidecar "0.5.9"]
+                 [com.taoensso/sente "1.11.0"]
 
                  ;; CLJS
-                 [org.clojure/clojurescript "1.9.946"]
+                 [org.clojure/clojurescript "1.9.521" ] ;; "1.9.946"
                  [cljs-http "0.1.44"]
-                 [reagent "0.8.0-alpha2"]]
+                 [reagent "0.6.1"] ;; "0.8.0-alpha2"
+                 ]
 
   :figwheel {:ring-handler friend-game.core/app}
   :clean-targets ^{:protect false} ["resources/public/cljs" "target"]
